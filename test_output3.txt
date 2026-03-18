@@ -1,0 +1,36 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.12.6, pytest-8.3.3, pluggy-1.5.0 -- C:\Users\prajw\AppData\Local\Programs\Python\Python312\python.exe
+cachedir: .pytest_cache
+dependencies: allensdk NOT INSTALLED, anys NOT INSTALLED, bids-validator-deno-2.4.1, bidsschematools-1.2.1, boto3 NOT INSTALLED, click-8.1.8, click-didyoumean-0.3.1, coverage NOT INSTALLED, dandi-0.74.3, dandischema-0.12.1, duecredit NOT INSTALLED, etelemetry-0.3.1, fasteners-0.20, flake8 NOT INSTALLED, fscacher-0.4.4, fsspec-2025.5.1, hdmf-4.3.1, humanize-4.15.0, interleave-0.3.0, joblib-1.4.2, keyring-25.6.0, keyrings.alt-5.0.2, ndx-events NOT INSTALLED, ndx-hed NOT INSTALLED, numcodecs-0.15.1, nwbinspector-0.7.0, opencv-python-4.10.0.84, packaging-24.1, platformdirs-4.2.2, pre-commit NOT INSTALLED, pycryptodomex-3.23.0, pydantic-2.9.2, pynwb-3.1.3, pyout-0.8.1, pytest-8.3.3, pytest-cov NOT INSTALLED, pytest-mock NOT INSTALLED, pytest-rerunfailures NOT INSTALLED, pytest-timeout NOT INSTALLED, python-dateutil-2.9.0.post0, requests-2.32.3, responses NOT INSTALLED, ruamel.yaml-0.18.10, semantic-version-2.10.0, tenacity-9.0.0, tensorstore-0.1.81, urllib3-2.2.2, vcrpy NOT INSTALLED, yarl-1.13.1, zarr-2.18.7, zarr_checksum-0.4.7
+rootdir: C:\Stored\All Files\Coding\Projects\Intent-Classification-System
+configfile: pyproject.toml
+plugins: anyio-4.4.0, dandi-0.74.3, dash-2.18.2, langsmith-0.4.2
+collecting ... collected 25 items / 2 skipped
+
+tests/test_intent_classifier.py::TestIntentClassifierStub::test_classify_returns_intent_key PASSED [  4%]
+tests/test_intent_classifier.py::TestIntentClassifierStub::test_intent_is_string PASSED [  8%]
+tests/test_intent_classifier.py::TestIntentClassifierStub::test_confidence_in_range PASSED [ 12%]
+tests/test_intent_classifier.py::TestIntentClassifierStub::test_top_k_length PASSED [ 16%]
+tests/test_intent_classifier.py::TestIntentClassifierStub::test_top_k_items_have_required_keys PASSED [ 20%]
+tests/test_intent_classifier.py::TestIntentClassifierStub::test_elapsed_ms_non_negative PASSED [ 24%]
+tests/test_intent_classifier.py::TestIntentClassifierStub::test_latency_report_populated PASSED [ 28%]
+tests/test_intent_classifier.py::TestIntentClassifierStub::test_low_confidence_flag_present PASSED [ 32%]
+tests/test_intent_classifier.py::TestIntentClassifierStub::test_keyword_routing[play jazz music-PlayMusic] PASSED [ 36%]
+tests/test_intent_classifier.py::TestIntentClassifierStub::test_keyword_routing[set an alarm-SetAlarm] PASSED [ 40%]
+tests/test_intent_classifier.py::TestIntentClassifierStub::test_keyword_routing[what is the weather-CheckWeather] PASSED [ 44%]
+tests/test_intent_classifier.py::TestIntentClassifierStub::test_keyword_routing[navigate to the airport-NavigateTo] PASSED [ 48%]
+tests/test_intent_classifier.py::TestIntentClassifierStub::test_keyword_routing[tell me a joke-TellJoke] PASSED [ 52%]
+tests/test_intent_classifier.py::TestIntentClassifierStub::test_keyword_routing[hang up-EndCall] PASSED [ 56%]
+tests/test_intent_classifier.py::TestIntentClassifierStub::test_keyword_routing[convert 100 miles to kilometres-ConvertUnits] PASSED [ 60%]
+tests/test_intent_classifier.py::TestIntentClassifierStub::test_keyword_routing[what is my battery level-CheckBattery] PASSED [ 64%]
+tests/test_wake_word_model.py::TestConvBlock::test_conv_block_output_shape PASSED [ 68%]
+tests/test_wake_word_model.py::TestConvBlock::test_conv_block_grad_flows PASSED [ 72%]
+tests/test_wake_word_model.py::TestWakeWordCNNGRU::test_forward_shape PASSED [ 76%]
+tests/test_wake_word_model.py::TestWakeWordCNNGRU::test_output_range PASSED [ 80%]
+tests/test_wake_word_model.py::TestWakeWordCNNGRU::test_batch_forward PASSED [ 84%]
+tests/test_wake_word_model.py::TestWakeWordCNNGRU::test_predict_proba_no_grad PASSED [ 88%]
+tests/test_wake_word_model.py::TestWakeWordCNNGRU::test_parameter_count PASSED [ 92%]
+tests/test_wake_word_model.py::TestWakeWordCNNGRU::test_from_config_factory PASSED [ 96%]
+tests/test_wake_word_model.py::TestWakeWordCNNGRU::test_gradient_flow PASSED [100%]
+
+======================== 25 passed, 2 skipped in 4.02s ========================
