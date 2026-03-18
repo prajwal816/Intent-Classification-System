@@ -5,13 +5,14 @@ Unit tests for MFCC feature extraction.
 """
 from __future__ import annotations
 
-pytest_plugins = []
-librosa = pytest.importorskip("librosa", reason="librosa not installed")
-
-import numpy as np
 import pytest
 
+librosa = pytest.importorskip("librosa", reason="librosa not installed")
+torch_skip = pytest.importorskip("torch", reason="torch not installed")
+
+import numpy as np
 from src.audio.feature_extraction import MFCCExtractor, MFCCConfig
+
 
 
 class TestMFCCExtractor:
