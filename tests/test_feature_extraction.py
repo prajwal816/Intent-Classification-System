@@ -5,6 +5,9 @@ Unit tests for MFCC feature extraction.
 """
 from __future__ import annotations
 
+pytest_plugins = []
+librosa = pytest.importorskip("librosa", reason="librosa not installed")
+
 import numpy as np
 import pytest
 

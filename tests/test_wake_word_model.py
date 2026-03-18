@@ -5,8 +5,9 @@ Unit tests for the CNN-GRU wake word model.
 """
 from __future__ import annotations
 
-import torch
 import pytest
+torch = pytest.importorskip("torch", reason="torch not installed")
+import torch
 
 from src.models.wake_word_model import WakeWordCNNGRU, ConvBlock
 
