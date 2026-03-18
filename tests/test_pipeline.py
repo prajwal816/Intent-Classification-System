@@ -5,8 +5,9 @@ Integration tests for the end-to-end VoicePipeline (all stages in stub/mock mode
 """
 from __future__ import annotations
 
-import numpy as np
 import pytest
+np = pytest.importorskip("numpy", reason="numpy not installed")
+import numpy as np
 from unittest.mock import MagicMock, patch
 
 from src.inference.pipeline import VoicePipeline
@@ -14,6 +15,7 @@ from src.inference.wake_word_detector import WakeWordDetector
 from src.inference.stt_engine import STTEngine
 from src.inference.intent_classifier import IntentClassifier
 from src.utils.metrics import LatencyReport, LatencyTracker
+
 
 
 # ─────────────────────────────────────────────────────────────────────────────

@@ -6,9 +6,11 @@ Unit tests for IntentClassifier (stub mode — no BERT weights required).
 from __future__ import annotations
 
 import pytest
+np = pytest.importorskip("numpy", reason="numpy not installed")
 
 from src.inference.intent_classifier import IntentClassifier, _STUB_LABELS
 from src.utils.metrics import LatencyReport
+
 
 
 class TestIntentClassifierStub:
