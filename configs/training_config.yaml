@@ -1,0 +1,46 @@
+# ============================================================
+# Training Configuration
+# ============================================================
+
+wake_word_training:
+  data_dir: "data/raw/wake_word/"
+  output_dir: "data/models/wake_word/"
+  checkpoint_name: "cnn_gru_wake_word.pt"
+
+  num_samples_positive: 2000
+  num_samples_negative: 2000
+  val_split: 0.15
+  test_split: 0.10
+
+  batch_size: 64
+  epochs: 30
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  scheduler: "cosine"          # cosine | step | none
+  scheduler_step_size: 10
+  scheduler_gamma: 0.5
+
+  early_stopping_patience: 5
+  seed: 42
+
+intent_training:
+  data_dir: "data/raw/intents/"
+  output_dir: "data/models/intent/"
+
+  num_samples_per_class: 200   # total = num_samples_per_class * 30 = 6000
+  val_split: 0.15
+  test_split: 0.10
+
+  batch_size: 32
+  epochs: 5
+  learning_rate: 2.0e-5
+  warmup_ratio: 0.06
+  weight_decay: 0.01
+  max_length: 128
+  seed: 42
+
+  logging_steps: 50
+  eval_steps: 100
+  save_steps: 100
+  load_best_model_at_end: true
+  metric_for_best_model: "accuracy"
