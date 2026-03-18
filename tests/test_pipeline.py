@@ -6,8 +6,12 @@ Integration tests for the end-to-end VoicePipeline (all stages in stub/mock mode
 from __future__ import annotations
 
 import pytest
+
+# Pipeline transitively imports librosa via WakeWordDetector → feature_extraction
+pytest.importorskip("librosa", reason="librosa not installed — install with: pip install librosa")
 np = pytest.importorskip("numpy", reason="numpy not installed")
 import numpy as np
+
 from unittest.mock import MagicMock, patch
 
 from src.inference.pipeline import VoicePipeline
