@@ -1,0 +1,36 @@
+# ============================================================
+# Pipeline Configuration
+# Wake Word Detection & Intent Classification System
+# ============================================================
+
+pipeline:
+  sample_rate: 16000           # Hz
+  chunk_duration_ms: 500       # ms per audio chunk
+  chunk_size: 8000             # samples per chunk (sample_rate * chunk_duration / 1000)
+  n_channels: 1
+  latency_budget_ms: 100       # max acceptable end-to-end latency
+
+wake_word:
+  threshold: 0.75              # confidence threshold for detection
+  model_path: "data/models/wake_word/cnn_gru_wake_word.pt"
+  tflite_path: "deployment/wake_word.tflite"
+  keyword: "hey_system"
+
+stt:
+  model_name: "tiny"           # Whisper model size: tiny / base / small
+  language: "en"
+  fp16: false
+  beam_size: 1                 # greedy decoding for speed
+
+intent:
+  model_path: "data/models/intent/"
+  num_labels: 30
+  max_length: 128
+  confidence_threshold: 0.50
+
+logging:
+  level: "INFO"
+  log_dir: "logs/"
+  log_file: "pipeline.log"
+  max_bytes: 10485760          # 10 MB
+  backup_count: 5
